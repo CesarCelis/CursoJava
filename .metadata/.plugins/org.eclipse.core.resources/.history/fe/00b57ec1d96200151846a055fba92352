@@ -1,0 +1,132 @@
+package italia;
+
+public class GiroDeItalia 
+{
+	private String anio;
+	private Equipo[][]equipos;
+	/**
+	 * @param anio
+	 * @param equipos
+	 */
+	public GiroDeItalia(String anio) {
+		super();
+		this.anio = anio;
+		equipos = new Equipo[5][5];
+	}
+	/**
+	 * @return the anio
+	 */
+	public String getAnio() {
+		return anio;
+	}
+	/**
+	 * @param anio the anio to set
+	 */
+	public void setAnio(String anio) {
+		this.anio = anio;
+	}
+	/**
+	 * @return the equipos
+	 */
+	public Equipo[][] getEquipos() {
+		return equipos;
+	}
+	/**
+	 * @param equipos the equipos to set
+	 */
+	public void setEquipos(Equipo[][] equipos) {
+		this.equipos = equipos;
+	}
+	
+	
+	public boolean buscarEquipo(String codigo)
+	{
+		for(int i=0; i<equipos.length; i++)
+		{
+			for(int j=0; j<equipos.length; j++)
+			{
+				if(equipos[i][j]!=null)
+				{
+					if(equipos[i][j].getCodigo().equals(codigo))
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean agregarEquipo(Equipo e)
+	{
+		if(buscarEquipo(e.getCodigo()))
+		{
+			return false;
+		}
+		for(int i=0; i<equipos.length; i++)
+		{
+			for(int j=0; j<equipos.length; j++)
+			{
+				if(equipos[i][j]==null)
+				{
+					equipos[i][j]=e;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean eliminarEquipo(String codigo)
+	{
+		for(int i=0; i<equipos.length; i++)
+		{
+			for(int j=0; j<equipos.length;j++)
+			{
+				if(equipos[i][j]!=null && equipos[i][j].getCodigo().equals(codigo))
+				{
+					equipos[i][j]=null;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean agregarCiclista(String codigo, Ciclista c)
+	  {
+		  for(int i=0;i<equipos.length;i++)
+		  {
+			  for(int j=0; j<equipos.length;j++)
+			  {
+				  if(equipos[i][j]!=null)
+				  {
+					  if(equipos[i][j].getCodigo().equals(codigo))
+					  {
+						  return equipos[i][j].eliminarCiclista(c);
+					  }
+				  }
+			  }
+	      } 
+		  return false;
+	  }
+	
+	public boolean eliminarCiclista(String codigo, String idc)
+	  {
+		  for(int i=0;i<ciclista.length;i++)
+		  {
+			  for(int j=0; j<ciclista.length;j++)
+			  {
+				  if(equipo[i][j]!=null)
+				  {
+					  if(equipo[i][j].getCodigo().equals(codigo))
+					  {
+						  return equipos[i][j].eliminarCiclista(idc);
+					  }
+				  }
+		   	  }
+	      }
+		  return false;
+	  }
+	
+}

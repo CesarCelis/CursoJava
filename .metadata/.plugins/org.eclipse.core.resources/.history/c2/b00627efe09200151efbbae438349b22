@@ -1,0 +1,44 @@
+package libro2;
+import java.util.Scanner;
+
+public class LibroCalificaciones 
+{
+	private String nombreCurso;
+
+	public String getNombreCurso() 
+	{
+		return nombreCurso;
+	}
+
+	public void setNombreCurso(String nombreCurso) {
+		
+		this.nombreCurso = nombreCurso;
+	}
+	
+	public void mostrarNombre()
+	{
+		System.out.println("Nombre del Curso: "+getNombreCurso());
+	}
+	
+	public double promedio(int numeroEstudiantes, double nota)
+	{
+		double total=0;
+		int contador=0;	
+		double promedio=0;
+		Scanner entrada=new Scanner(System.in);
+		System.out.println("Ingrese el Número de estudiantes");
+		numeroEstudiantes=entrada.nextInt();	
+		
+		while(contador<numeroEstudiantes)
+		{
+			System.out.println("Ingrese la Nota "+(contador+1)+":");
+			nota=entrada.nextDouble();
+			total=total+nota;
+			contador++;
+		}
+		promedio=total/numeroEstudiantes;
+		return promedio;
+		
+	}
+	
+}

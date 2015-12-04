@@ -1,0 +1,22 @@
+package libro2;
+
+public class LibroCalificaciones 
+{
+	private String nombreCurso;
+
+	public String getNombreCurso() 
+	{
+		return nombreCurso;
+	}
+
+	public void setNombreCurso(String nombreCurso) {
+		
+		this.nombreCurso = nombreCurso;
+	}
+	
+	public void mostrarNombre()
+	{
+		System.out.println("Nombre del Curso: "+getNombreCurso());
+	}
+	
+}

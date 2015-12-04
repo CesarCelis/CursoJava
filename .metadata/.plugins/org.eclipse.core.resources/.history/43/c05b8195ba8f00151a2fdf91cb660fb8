@@ -1,0 +1,31 @@
+package videos;
+
+import java.util.Scanner;
+
+public class Triangulo1 {
+
+	
+	public static void main(String[] args) 
+	{	Scanner obj=new Scanner(System.in);		
+		int tamaño=0;
+		char asterisco='*';
+		char espacio=' ';
+		System.out.println("Ingrese el Tamaño del triangulo: ");
+		tamaño=obj.nextInt();		
+		for (int i = 0; i <= tamaño; i++)
+		{			
+			for (int espacios= tamaño-i; espacios >0; espacios--) 
+			{
+				System.out.print(espacio);
+			}
+			for (int lineas = 1; lineas < 2*i; lineas++) 
+			{
+				System.out.print(asterisco);
+				
+			}
+			System.out.println("");
+			
+		}
+	}
+
+}

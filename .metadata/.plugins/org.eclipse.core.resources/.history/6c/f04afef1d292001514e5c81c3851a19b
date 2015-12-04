@@ -1,0 +1,11 @@
+package libro2;
+import java.lang.*;
+public class LeerLibroCalificaciones {
+
+	public static void main(String[] args) 
+	{
+		System.out.println("ingrese la cantidad de estudiantes del curso");
+		Scanner entrada=new Scanner(System.in);
+	}
+
+}

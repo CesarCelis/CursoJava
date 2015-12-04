@@ -1,0 +1,142 @@
+package italia;
+
+public class Equipo
+{
+   private String nombre;
+   private String codigo;
+   private double tiempo;
+   private String anio;
+   private Ciclista [] ciclista;
+   private Equipo [] equipo;
+/**
+ * @param nombre
+ * @param codigo
+ * @param tiempo
+ * @param anio
+ * @param ciclista
+ */
+public Equipo(String nombre, String codigo, double tiempo, String anio) {
+	super();
+	this.nombre = nombre;
+	this.codigo = codigo;
+	this.tiempo = tiempo;
+	this.anio = anio;
+	ciclista = new Ciclista[9];
+}
+/**
+ * @return the nombre
+ */
+public String getNombre() {
+	return nombre;
+}
+/**
+ * @param nombre the nombre to set
+ */
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+/**
+ * @return the codigo
+ */
+public String getCodigo() {
+	return codigo;
+}
+/**
+ * @param codigo the codigo to set
+ */
+public void setCodigo(String codigo) {
+	this.codigo = codigo;
+}
+/**
+ * @return the tiempo
+ */
+public double getTiempo() {
+	return tiempo;
+}
+/**
+ * @param tiempo the tiempo to set
+ */
+public void setTiempo(double tiempo) {
+	this.tiempo = tiempo;
+}
+/**
+ * @return the anio
+ */
+public String getAnio() {
+	return anio;
+}
+/**
+ * @param anio the anio to set
+ */
+public void setAnio(String anio) {
+	this.anio = anio;
+}
+/**
+ * @return the ciclista
+ */
+public Ciclista[] getCiclista() {
+	return ciclista;
+}
+/**
+ * @param ciclista the ciclista to set
+ */
+public void setCiclista(Ciclista[] ciclista) {
+	this.ciclista = ciclista;
+}
+   
+  public int  buscarCiclista(String id)
+  {
+	  for(int i=0;i<ciclista.length;i++)
+	  {
+		  for(int j=0; j<ciclista.length;j++)
+		  {
+			  if(ciclista[i]!=null)
+			  {
+				  if(ciclista[i].getId().equals(id))
+				  {
+					  return 1;
+				  }
+			  }
+			 
+		  }
+	  }
+	  return-1;
+  }
+
+  
+  public boolean agregarCiclista(String codigo, Ciclista c)
+  {
+	  for(int i=0;i<ciclista.length;i++)
+	  {
+		  for(int j=0; j<ciclista.length;j++)
+		  {
+			  if(equipo[i][j]!=null)
+			  {
+				  if(equipo[i][j].getCodigo().equals(codigo))
+				  {
+					  return equipos[i][j].eliminarCiclista(idc);
+				  }
+			  }
+		  }
+      } 
+	  return false;
+  }
+  public boolean eliminarCiclista(String codigo; String idc)
+  {
+	  for(int i=0;i<ciclista.length;i++)
+	  {
+		  for(int j=0; j<ciclista.length;j++)
+		  {
+			  if(equipo[i][j]!=null)
+			  {
+				  if(equipo[i][j].getCodigo().equals(codigo))
+				  {
+					  return equipos[i][j].eliminarCiclista(idc);
+				  }
+			  }
+	   	  }
+      }
+	  return false;
+  }
+
+  

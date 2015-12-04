@@ -1,0 +1,15 @@
+package videos;
+
+public class Triangulo1 {
+	private static int tamaño=10;
+	
+	public static void main(String[] args) 
+	{
+		char asterisco='*';
+		for (int i = 0; i < tamaño; i++) 
+		{
+			System.out.println(asterisco);
+		}
+	}
+
+}
